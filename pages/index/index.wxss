@@ -19,3 +19,10 @@
 .usermotto {
   margin-top: 200px;
 }
+
+button{
+  background-color: #109d59;
+  line-height: 60rpx;
+  margin-top: 15rpx;
+  font-size: 36rpx;
+}

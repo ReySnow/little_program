@@ -10,5 +10,5 @@
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
   </view>
-  <view bindtap="gotomovie">跳转</view>
+  <button bindtap="gotomovie">电影信息</button>
 </view>
