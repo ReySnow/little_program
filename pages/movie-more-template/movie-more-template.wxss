@@ -1,0 +1,9 @@
+@import "../movie-template/movie-template.wxss";
+.moviemore{
+  float: left;
+}
+.moviemorecontainer{
+  padding: 5rpx auto;
+  height: 1300rpx;
+  margin: 20rpx 0 40rpx 16rpx;
+}

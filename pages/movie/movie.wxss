@@ -1,0 +1,7 @@
+/* pages/movie/movie.wxss */
+@import "../movie-list-template/movie-list-template.wxss";
+
+.plus {
+  width: 50rpx;
+  height: 50rpx;
+}

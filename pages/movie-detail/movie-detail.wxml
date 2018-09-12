@@ -1,0 +1,6 @@
+<!--pages/movie-detail/movie-detail.wxml-->
+<view class="detail">
+  <image src="{{coverageUrl}}"></image>
+  <text class="title">{{title}}</text>
+  <text class="summary">{{summary}}</text>
+</view>

@@ -1,0 +1,23 @@
+/* pages/movie-detail/movie-detail.wxss */
+.detail{
+  display: flex;
+  flex-direction: column;
+}
+image{
+  width: 700rpx;
+  height: 948rpx;
+  padding: 20rpx;
+  margin: 5rpx 0 0 8rpx;
+}
+.title{
+  font-size: 50rpx;
+  color:black;
+  line-height: 60rpx;
+}
+text{
+  color: #666;
+  line-height: 44rpx;
+  letter-spacing: 2px;
+  font-size: 32rpx;
+  margin: 20rpx 30rpx 30rpx;
+}

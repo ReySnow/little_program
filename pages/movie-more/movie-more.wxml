@@ -1,0 +1,3 @@
+<!--pages/movie-more/movie-more.wxml-->
+<import src="../movie-more-template/movie-more-template.wxml" />
+<template is="moviemoreTemplate" data="{{movies}}" />
