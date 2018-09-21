@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>线性渐变动画</title>
+    <style>
+        body{
+            width:100%;
+            overflow:hidden;
+            margin:0;
+            background: hsla(0,0%,0%,1);
+        }
+    </style>
+</head>
+<body>
+    <canvas id="canvas"></canvas>
+    <script>
+        var c = document.getElementById('canvas'),
+            $ = c.getContext('2d'),
+            w = c.width = window.innerWidth,
+            h = c.height = window.innerHeight,
+            t = 0, num = 450,
+            u = 0, _u,
+            s,x, y,
+            j = 200;
+            s = true;
+            dis = 0,
+            _t = 1 / 100;
+
+        var anim = function() {
+            $.globalCompositeOperation = 'source-over';
+            $.fillStyle = 'hsla(0, 0%, 0%, .75)';
+            $.fillRect(0, 0, w, h);
+            $.globalCompositeOperation = 'lighter';
+            for (var i = 0; i < 1; i++) {
+                x = 0; _u = (u / 4)+i;
+                $.beginPath();
+                for (var i = 0; i < 2047; i++) {
+                    angle = i*Math.PI/1024;
+                    r = j*Math.cos(3*angle);
+                    x = Math.round(r*Math.cos(angle+dis));
+                    y = Math.round(r*Math.sin(angle+dis));
+                    $.lineWidth = .04;
+                    $.arc(w / 2 - x, h / 2 - y, .5, 0, 2 * Math.PI);
+                }
+                var g = $.createLinearGradient(w / 2 + x, h / 2 + y,  0, w / 2 + x, h / 2 + y);
+                g.addColorStop(0.0, 'hsla('+ u +',85%,50%,1)');
+                g.addColorStop(0.5, 'hsla('+ _u +',85%,40%,1)');
+                g.addColorStop(1, 'hsla(0,0%,5%,1)'); 
+                $.strokeStyle = g;
+                $.stroke();
+            }
+            dis += 16*Math.PI/1024;
+            if(j == 200)
+                s = false;
+            if(j==10)
+                s = true;
+            if(s)
+                j+=5;
+            else
+                j-=5;
+            t += _t;
+            u -= .2;
+            window.requestAnimationFrame(anim);
+        };
+        anim();
+        window.addEventListener('resize', function() {
+            c.width = w = window.innerWidth;
+            c.height = h = window.innerHeight;
+        }, false);
+    </script>
+</body>
+</html>
